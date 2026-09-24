@@ -11,8 +11,18 @@ Dados transformados a partir de `Giuseph66/analize_sites_Egov`, sem alterar o re
 - `dados/base_integrada_mt.csv`: comparação dos dois instrumentos.
 - `dados/fato_accessmonitor_ouvidorias.csv`: AccessMonitor da rodada de Ouvidorias de 21/09/2026.
 - `dados/validacao_ouvidorias.csv`: validação funcional das Ouvidorias.
+- `scripts/gerar_detalhe_json.py`: extrator dos JSONs individuais do AMAWeb.
+- `dados/amaweb_praticas_detalhe.csv`: saída do extrator, com uma linha por prática.
+- `dados/amaweb_resumo_praticas.csv`: saída resumida por site, prática e veredito.
+- `dados/amaweb_elementos_detalhe.csv`: saída detalhada dos elementos avaliados.
 
-A consolidação AMAWeb das Ouvidorias fica como próxima etapa porque os resultados do AMAWeb estão distribuídos em JSONs por run, sem um CSV consolidado equivalente ao MT.
+## JSONs do AMAWeb
+Os JSONs individuais não serão ignorados. Eles são a fonte dos detalhes de prática, veredito, código de resultado e elementos.
+
+O workflow `.github/workflows/atualizar_amaweb.yml` baixa uma cópia do repositório público de origem e executa a transformação automaticamente. Ele pode ser executado em **Actions > Atualizar detalhes AMAWeb > Run workflow**.
 
 ## Regra de qualidade
 Resultados identificados como Cloudflare/Access Denied/Just a Moment permanecem nos dados, mas não contam como avaliação utilizável para indicadores de nota.
+
+## Importante
+O repositório de origem permanece intacto. Toda transformação acontece somente neste repositório.
