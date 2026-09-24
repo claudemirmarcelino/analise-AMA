@@ -1,14 +1,19 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Analise AMA — Revisão da Equipe</title>
 <style>
 :root{--bg:#f3f6f8;--card:#fff;--ink:#20303b;--muted:#687984;--line:#dbe3e8;--accent:#197b67;--accent2:#2e9b85;--warn:#b26a00;--bad:#b63a4a}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px Arial,sans-serif}header{background:#123f35;color:#fff;padding:22px 28px}h1{margin:0 0 6px;font-size:25px}header p{margin:0;color:#d8ece7}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.tabs button{border:1px solid #4c776d;background:#1d5146;color:#fff;padding:9px 12px;border-radius:9px;cursor:pointer}.tabs button.active{background:#fff;color:#123f35}.wrap{max-width:1480px;margin:auto;padding:22px}.page{display:none}.page.active{display:block}.grid{display:grid;gap:14px}.cards{grid-template-columns:repeat(6,1fr)}.two{grid-template-columns:1.25fr .75fr}.three{grid-template-columns:repeat(3,1fr)}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px}.metric{font-size:25px;font-weight:700;color:var(--accent)}.label{font-size:12px;color:var(--muted);margin-top:4px}.panel{margin-top:14px}h2{margin:0 0 12px;font-size:18px}h3{margin:12px 0 9px;font-size:14px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}select,input{padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f7fafb;position:sticky;top:0}.scroll{max-height:560px;overflow:auto}.barline{display:grid;grid-template-columns:180px 1fr 60px;gap:10px;align-items:center;margin:9px 0}.bar{height:12px;background:#e8eef1;border-radius:8px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--accent),#55b7a2)}.pill{display:inline-block;background:#edf4f2;color:#315c52;border-radius:20px;padding:3px 7px;font-size:11px}.note{font-size:12px;color:var(--muted);line-height:1.5}.ok{color:var(--accent)}.warn{color:var(--warn)}.bad{color:var(--bad)}.detail{display:grid;grid-template-columns:180px 1fr;gap:7px;font-size:13px}.detail b{color:var(--muted)}@media(max-width:1100px){.cards{grid-template-columns:repeat(3,1fr)}.two,.three{grid-template-columns:1fr}}@media(max-width:650px){.cards{grid-template-columns:repeat(2,1fr)}.wrap{padding:12px}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px Arial,sans-serif}header{background:#123f35;color:#fff;padding:22px 28px}h1{margin:0 0 6px;font-size:25px}header p{margin:0;color:#d8ece7}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.tabs button{border:1px solid #4c776d;background:#1d5146;color:#fff;padding:9px 12px;border-radius:9px;cursor:pointer}.tabs button.active{background:#fff;color:#123f35}.noteBtn{background:#fff;border:1px solid var(--line);color:var(--ink);padding:10px 14px;border-radius:9px;cursor:pointer}.noteBtn:hover{border-color:var(--accent);background:#f2faf7}.wrap{max-width:1480px;margin:auto;padding:22px}.page{display:none}.page.active{display:block}.grid{display:grid;gap:14px}.cards{grid-template-columns:repeat(6,1fr)}.two{grid-template-columns:1.25fr .75fr}.three{grid-template-columns:repeat(3,1fr)}.card,.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px}.metric{font-size:25px;font-weight:700;color:var(--accent)}.label{font-size:12px;color:var(--muted);margin-top:4px}.panel{margin-top:14px}h2{margin:0 0 12px;font-size:18px}h3{margin:12px 0 9px;font-size:14px}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}select,input{padding:9px 10px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{background:#f7fafb;position:sticky;top:0}.scroll{max-height:560px;overflow:auto}.barline{display:grid;grid-template-columns:180px 1fr 60px;gap:10px;align-items:center;margin:9px 0}.bar{height:12px;background:#e8eef1;border-radius:8px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--accent),#55b7a2)}.pill{display:inline-block;background:#edf4f2;color:#315c52;border-radius:20px;padding:3px 7px;font-size:11px}.note{font-size:12px;color:var(--muted);line-height:1.5}.ok{color:var(--accent)}.warn{color:var(--warn)}.bad{color:var(--bad)}.detail{display:grid;grid-template-columns:180px 1fr;gap:7px;font-size:13px}.detail b{color:var(--muted)}@media(max-width:1100px){.cards{grid-template-columns:repeat(3,1fr)}.two,.three{grid-template-columns:1fr}}@media(max-width:650px){.cards{grid-template-columns:repeat(2,1fr)}.wrap{padding:12px}}
 </style></head><body>
 <header><div style="max-width:1480px;margin:0 auto 10px;font-size:12px;color:#cfe7e1">VERSÃO WEB PARA REVISÃO DA EQUIPE · analise-AMA</div><h1>Analise AMA — Dashboard integrado v1</h1><p>AMAWeb × AccessMonitor · análise única com filtros e detalhe por resultado</p><div class="tabs">
 <button class="active" data-p="visao">Visão geral</button><button data-p="comp">Comparação</button><button data-p="coleta">Coleta</button><button data-p="ouv">Ouvidorias</button><button data-p="detalhe">Detalhe</button>
 </div></header>
 <div class="wrap">
 
-<section id="visao" class="page active"><div class="grid cards" id="cards"></div><div class="grid two"><div class="panel"><h2>Distribuição das notas</h2><div id="dist"></div></div><div class="panel"><h2>Composição da base</h2><div id="ent"></div></div></div><div class="panel"><h2>Como ler esta primeira versão</h2><p class="note">Todos os resultados individuais ficam dentro deste mesmo dashboard. O usuário filtra por entidade, município ou situação e, quando necessário, desce até o detalhe. Avaliações não utilizáveis não são transformadas artificialmente em nota zero. Este painel é uma versão de trabalho para discussão da equipe.</p></div></section>
+<section id="visao" class="page active"><div class="grid cards" id="cards"></div><div class="grid two"><div class="panel"><h2>Distribuição das notas</h2><div id="dist"></div></div><div class="panel"><h2>Composição da base</h2><div id="ent"></div></div></div>
+<div class="panel"><h2>Resultados agrupados por nota</h2>
+  <div class="toolbar"><select id="noteTool"><option value="ama">Nota AMAWeb</option><option value="am">Nota AccessMonitor</option></select><span class="note">Clique em uma nota para abrir todas as cidades/entidades que possuem exatamente essa nota.</span></div>
+  <div id="noteGroups"></div>
+  <div class="panel" id="noteResults"><p class="note">Selecione uma nota acima.</p></div>
+</div><div class="panel"><h2>Como ler esta primeira versão</h2><p class="note">Todos os resultados individuais ficam dentro deste mesmo dashboard. O usuário filtra por entidade, município ou situação e, quando necessário, desce até o detalhe. Avaliações não utilizáveis não são transformadas artificialmente em nota zero. Este painel é uma versão de trabalho para discussão da equipe.</p></div></section>
 
 <section id="comp" class="page"><div class="panel"><h2>AMAWeb × AccessMonitor</h2><div class="toolbar"><select id="tipo"><option value="">Todos os tipos</option><option>Prefeitura/Órgão Municipal</option><option>Câmara Municipal</option><option>Outro/Consórcio</option></select><select id="dif"><option value="">Todas as diferenças</option><option value="0">menos de 0,5</option><option value="1">0,5 a menos de 1</option><option value="2">1 ponto ou mais</option></select></div><div class="grid three" id="cmpcards"></div><div class="scroll"><table id="cmpt"></table></div></div></section>
 
@@ -30,6 +35,31 @@ function metrics(){
  const bands=["<5","5-<6","6-<7","7-<8","8-<9","9-10"],max=Math.max(...bands.map(b=>Math.max(a.filter(r=>r.faixa_amaweb===b).length,m.filter(r=>r.faixa_accessmonitor===b).length)),1);
  $("dist").innerHTML=bands.map(b=>{const x=a.filter(r=>r.faixa_amaweb===b).length,y=m.filter(r=>r.faixa_accessmonitor===b).length;return '<div class="barline"><div>'+b+'</div><div><div class="bar"><div class="fill" style="width:'+(x/max*100)+'%"></div></div><div style="height:5px"></div><div class="bar"><div class="fill" style="width:'+(y/max*100)+'%"></div></div></div><div>AMA '+x+'<br>AM '+y+'</div></div>'}).join("");
  const ent={};base.forEach(r=>ent[r.tipo_entidade]=(ent[r.tipo_entidade]||0)+1);$("ent").innerHTML=Object.entries(ent).map(([k,v])=>'<div class="barline"><div>'+eh(k)+'</div><div class="bar"><div class="fill" style="width:'+(v/total*100)+'%"></div></div><div>'+v+'</div></div>').join("");
+ renderNoteGroups();
+}
+function renderNoteGroups(){
+ const tool=$("noteTool")?.value||"ama";
+ const key=tool==="ama"?"nota_amaweb":"nota_accessmonitor";
+ const valid=tool==="ama"?validA:validM;
+ const groups={};
+ base.filter(valid).forEach(r=>{
+   const v=Number(r[key]);
+   if(Number.isFinite(v)){const k=v.toFixed(1);if(!groups[k])groups[k]=[];groups[k].push(r);}
+ });
+ const keys=Object.keys(groups).sort((a,b)=>Number(b)-Number(a));
+ $("noteGroups").innerHTML=keys.map(k=>'<button class="noteBtn" data-note="'+k+'" style="margin:4px">'+k+' <span class="pill">'+groups[k].length+'</span></button>').join("");
+ document.querySelectorAll(".noteBtn").forEach(b=>b.onclick=()=>showNoteGroup(b.dataset.note,tool));
+}
+function showNoteGroup(note,tool){
+ const key=tool==="ama"?"nota_amaweb":"nota_accessmonitor";
+ const rows=base.filter(r=>{
+   const v=Number(r[key]);
+   return Number.isFinite(v) && v.toFixed(1)===Number(note).toFixed(1) && (tool==="ama"?validA(r):validM(r));
+ });
+ $("noteResults").innerHTML='<h3>Nota '+eh(Number(note).toFixed(1))+' — '+rows.length+' resultado(s)</h3>'+
+ '<div class="scroll"><table><tr><th>Município/entidade</th><th>Tipo</th><th>Nota</th><th>Outra ferramenta</th><th>Diferença</th><th>Correspondência</th></tr>'+
+ rows.map(r=>'<tr><td>'+eh(r.municipio_chave||r.url_amaweb)+'</td><td>'+eh(r.tipo_entidade)+'</td><td>'+eh(r[key])+'</td><td>'+eh(tool==="ama"?(r.nota_accessmonitor||"—"):(r.nota_amaweb||"—"))+'</td><td>'+eh(r.diferenca_nota_amaweb_menos_accessmonitor||"—")+'</td><td>'+eh(r.correspondencia)+'</td></tr>').join("")+
+ '</table></div>';
 }
 function compare(){
  let r=base.filter(x=>validA(x)&&validM(x));const t=$("tipo").value,d=$("dif").value;if(t)r=r.filter(x=>x.tipo_entidade===t);if(d)r=r.filter(x=>{const v=Math.abs(Number(x.diferenca_nota_amaweb_menos_accessmonitor));return d==="0"?v<.5:d==="1"?v>=.5&&v<1:v>=1});
@@ -55,5 +85,6 @@ function detail(){
 window.show=i=>{const x=window.rows[i];$("dc").innerHTML='<h3>'+eh(x.municipio_chave||x.url_amaweb)+'</h3><div class="detail">'+Object.entries(x).filter(([k])=>["tipo_entidade","url_amaweb","url_accessmonitor","correspondencia","status_amaweb","nota_amaweb","avaliacao_amaweb","status_accessmonitor","nota_accessmonitor","avaliacao_accessmonitor","diferenca_nota_amaweb_menos_accessmonitor","tem_cloudflare_amaweb","tem_cloudflare_accessmonitor","accessmonitor_run"].includes(k)).map(([k,v])=>'<b>'+eh(k)+'</b><div>'+eh(v||"—")+'</div>').join("")+'</div>'};
 document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tabs button").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));$(b.dataset.p).classList.add("active")});
 $("tipo").onchange=compare;$("dif").onchange=compare;$("q").oninput=collection;$("st").onchange=collection;$("dq").oninput=detail;$("reset").onclick=()=>{$("dq").value="";detail()};
+$("noteTool").onchange=renderNoteGroups;
 metrics();compare();collection();ouvidorias();detail();
 </script></body></html>
