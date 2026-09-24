@@ -26,3 +26,8 @@ Resultados identificados como Cloudflare/Access Denied/Just a Moment permanecem 
 
 ## Importante
 O repositório de origem permanece intacto. Toda transformação acontece somente neste repositório.
+## Dashboard v1
+
+A primeira versão do dashboard integrado está em [dashboard/index.html](dashboard/index.html). Ele reúne Visão Geral, Comparação AMAWeb × AccessMonitor, Coleta, Ouvidorias e Detalhe em uma única tela navegável.
+
+Os resultados individuais não são separados em dashboards diferentes: são filtrados e detalhados dentro do mesmo painel.
