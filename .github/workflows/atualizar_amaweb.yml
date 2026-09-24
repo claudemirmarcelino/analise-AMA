@@ -1,0 +1,42 @@
+name: Atualizar detalhes AMAWeb
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/gerar_detalhe_json.py"
+      - ".github/workflows/atualizar_amaweb.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  gerar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout analise-AMA
+        uses: actions/checkout@v4
+        with:
+          path: analise-AMA
+
+      - name: Checkout fonte original
+        uses: actions/checkout@v4
+        with:
+          repository: Giuseph66/analize_sites_Egov
+          path: analize_sites_Egov
+          fetch-depth: 1
+
+      - name: Gerar tabelas a partir dos JSONs
+        run: |
+          cd analise-AMA
+          python scripts/gerar_detalhe_json.py --source-dir ../analize_sites_Egov
+
+      - name: Commit dos resultados
+        run: |
+          cd analise-AMA
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dados/amaweb_praticas_detalhe.csv dados/amaweb_resumo_praticas.csv dados/amaweb_elementos_detalhe.csv
+          git diff --cached --quiet && exit 0
+          git commit -m "data: atualizar detalhes derivados dos JSONs AMAWeb"
+          git push
